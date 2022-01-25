@@ -1,0 +1,17 @@
+.containerTitle {
+	background-color: #ff6b00;
+	width: 21rem;
+	font-size: 3rem;
+	font-weight: 800;
+	margin: 10rem auto 0 auto;
+	padding: 0.8rem 0rem;
+	box-shadow: 10px 12px 0px #eb965a;
+	text-align: center;
+	letter-spacing: 0.5px;
+}
+
+@media screen and (min-width: 1300px) {
+	.containerTitle {
+		margin-top: 11.2rem;
+	}
+}

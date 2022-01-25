@@ -1,6 +1,7 @@
 import "./navBar.css";
+import CartWidget from "./cartWidget";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAlignRight, faGamepad } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faGamepad } from "@fortawesome/free-solid-svg-icons";
 
 const NavBar = () => {
 	return (
@@ -11,16 +12,17 @@ const NavBar = () => {
 				</a>
 				<ul className="navBar-links">
 					<li>
-						<a href="##">Inicio</a>
+						<a href="##">Todos</a>
 					</li>
 					<li>
-						<a href="##">Juegos</a>
+						<a href="##">Escritorio</a>
 					</li>
 					<li>
-						<a href="##">Contacto</a>
+						<a href="##">Consola</a>
 					</li>
 				</ul>
-				<FontAwesomeIcon icon={faAlignRight} className="navBar-menu" />
+				<CartWidget />
+				<FontAwesomeIcon icon={faBars} className="navBar-menu" />
 			</nav>
 		</header>
 	);

@@ -14,7 +14,7 @@
 }
 .navBar-logo {
 	margin-left: 2rem;
-	font-size: 4.8rem;
+	font-size: 4.85rem;
 	color: #ff6b00;
 }
 .navBar ul {
@@ -23,7 +23,7 @@
 
 .navBar-menu {
 	margin-right: 2rem;
-	font-size: 2.8rem;
+	font-size: 2.9rem;
 	color: #ff6b00;
 	cursor: pointer;
 }
@@ -43,7 +43,6 @@
 	}
 	.navBar ul {
 		display: block;
-		margin-right: 4.5rem;
 	}
 	.navBar li {
 		display: inline-block;
@@ -52,9 +51,9 @@
 		text-decoration: none;
 		list-style: none;
 		color: white;
-		font-size: 1.3rem;
+		font-size: 1.2rem;
 		font-weight: 700;
-		margin: 0 1rem;
+		margin: 0 1.3rem;
 		padding: 0.9rem 1.3rem;
 		border-radius: 20px;
 	}
@@ -71,16 +70,13 @@
 	.navBar-logo {
 		margin-left: 6rem;
 	}
-	.navBar ul {
-		margin-right: 6rem;
-	}
 }
 
 @media screen and (min-width: 1300px) {
 	.navBar-logo {
 		margin-left: 8rem;
 	}
-	.navBar ul {
-		margin-right: 8rem;
+	.navBar li a {
+		margin: 0 2rem;
 	}
 }
