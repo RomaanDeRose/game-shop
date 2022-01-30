@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import "./itemCount.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
-import "./itemCount.css";
 
 const ItemCount = ({ stock }) => {
   const [sumProd, setSumProd] = useState(0);
