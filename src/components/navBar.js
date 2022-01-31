@@ -42,13 +42,13 @@ const NavBar = () => {
           onClick={toggleMenu}
         />
         <div className={classMenu}>
-          <a href="#" className="link">
+          <a href="#" className="link" onClick={toggleMenu}>
             INICIO
           </a>
-          <a href="#" className="link">
+          <a href="#" className="link" onClick={toggleMenu}>
             ESCRITORIO
           </a>
-          <a href="#" className="link">
+          <a href="#" className="link" onClick={toggleMenu}>
             CONSOLA
           </a>
         </div>
