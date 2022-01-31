@@ -1,17 +1,27 @@
+.itemListContainer {
+  text-align: center;
+}
+
 .containerTitle {
-	background-color: #ff6b00;
-	width: 21rem;
-	font-size: 3rem;
-	font-weight: 800;
-	margin: 10rem auto 0 auto;
-	padding: 0.8rem 0rem;
-	box-shadow: 10px 12px 0px #eb965a;
-	text-align: center;
-	letter-spacing: 0.5px;
+  background-color: #ff6b00;
+  width: 23.8rem;
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 10rem auto 4rem auto;
+  padding: 0.8rem 0rem;
+  box-shadow: 10px 12px 0px #eb965a;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.text-loading {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 2.2rem;
 }
 
 @media screen and (min-width: 1300px) {
-	.containerTitle {
-		margin-top: 11.2rem;
-	}
+  .containerTitle {
+    margin-top: 11.2rem;
+  }
 }
