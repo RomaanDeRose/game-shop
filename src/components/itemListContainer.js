@@ -3,15 +3,24 @@ import { useState, useEffect } from "react";
 import ItemCount from "./itemCount";
 import ItemList from "./itemList";
 import { getItems } from "../api/api";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = ({ greeting }) => {
   const [products, setProducts] = useState([]);
+  const { categoryGame } = useParams();
 
   useEffect(() => {
     getItems().then((res) => {
-      setProducts(res);
+      if (!categoryGame) {
+        setProducts(res);
+      } else {
+        const filterCategory = res.filter(
+          (item) => item.category === categoryGame
+        );
+        setProducts(filterCategory);
+      }
     });
-  }, []);
+  }, [categoryGame]);
 
   return (
     <div className="itemListContainer">
@@ -21,7 +30,7 @@ const ItemListContainer = ({ greeting }) => {
       ) : (
         <p className="text-loading">Cargando...</p>
       )}
-      <ItemCount stock={8} />
+      <ItemCount stock={6} />
     </div>
   );
 };

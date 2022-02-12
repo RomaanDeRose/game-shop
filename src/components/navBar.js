@@ -3,36 +3,30 @@ import "./navBar.css";
 import CartWidget from "./cartWidget";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faGamepad } from "@fortawesome/free-solid-svg-icons";
+import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
   const [navMenu, setNavMenu] = useState(false);
-  const [classMenu, setClassMenu] = useState("navMobile");
 
   const toggleMenu = () => {
-    if (navMenu) {
-      setClassMenu("navMobile");
-      setNavMenu(false);
-    } else {
-      setClassMenu("navMobile navMobile-active");
-      setNavMenu(true);
-    }
+    setNavMenu(!navMenu);
   };
 
   return (
     <header className="header">
       <nav className="navBar">
-        <a href="#">
+        <Link to="/">
           <FontAwesomeIcon icon={faGamepad} className="navBar-logo" />
-        </a>
+        </Link>
         <ul className="navBar-links">
           <li>
-            <a href="##">Todos</a>
+            <NavLink to="/">Inicio</NavLink>
           </li>
           <li>
-            <a href="##">Escritorio</a>
+            <NavLink to="/category/sports">Deportes</NavLink>
           </li>
           <li>
-            <a href="##">Consola</a>
+            <NavLink to="/category/action">Acción</NavLink>
           </li>
         </ul>
         <CartWidget />
@@ -41,16 +35,16 @@ const NavBar = () => {
           className="navBar-menu"
           onClick={toggleMenu}
         />
-        <div className={classMenu}>
-          <a href="#" className="link" onClick={toggleMenu}>
-            INICIO
-          </a>
-          <a href="#" className="link" onClick={toggleMenu}>
-            ESCRITORIO
-          </a>
-          <a href="#" className="link" onClick={toggleMenu}>
-            CONSOLA
-          </a>
+        <div className={navMenu ? "navMobile navMobile-active" : "navMobile"}>
+          <NavLink to="/" onClick={toggleMenu}>
+            Inicio
+          </NavLink>
+          <NavLink to="/category/sports" onClick={toggleMenu}>
+            Deportes
+          </NavLink>
+          <NavLink to="/category/action" onClick={toggleMenu}>
+            Acción
+          </NavLink>
         </div>
       </nav>
     </header>
