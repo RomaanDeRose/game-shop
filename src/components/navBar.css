@@ -2,9 +2,12 @@
   width: 100%;
   position: fixed;
   top: 0px;
-  left: 0px;
+  left: 0;
+  z-index: 2;
   padding: 0.8rem 0rem;
   background-color: #081722f6;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   box-shadow: 0px 2px 10px #00000040;
 }
 .navBar {
@@ -23,7 +26,7 @@
 
 .navBar-menu {
   position: relative;
-  z-index: 10;
+  z-index: 100;
   margin-right: 2rem;
   font-size: 2.9rem;
   color: #ff6b00;
@@ -32,7 +35,7 @@
 
 .navMobile {
   position: absolute;
-  z-index: 9;
+  z-index: 99;
   top: 0;
   left: 0;
   background-color: #081722f3;

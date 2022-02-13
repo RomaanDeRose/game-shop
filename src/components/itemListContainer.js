@@ -1,6 +1,5 @@
 import "./itemListContainer.css";
 import { useState, useEffect } from "react";
-import ItemCount from "./itemCount";
 import ItemList from "./itemList";
 import { getItems } from "../api/api";
 import { useParams } from "react-router-dom";
@@ -30,7 +29,6 @@ const ItemListContainer = ({ greeting }) => {
       ) : (
         <p className="text-loading">Cargando...</p>
       )}
-      <ItemCount stock={6} />
     </div>
   );
 };

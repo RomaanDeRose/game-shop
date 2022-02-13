@@ -1,15 +1,5 @@
 .itemDetailContainer {
   width: 90%;
-  max-width: 65rem;
-  margin: 6rem auto;
-  border: 7px solid #ff6b00;
-  border-radius: 22px;
-  padding: 3.5rem;
-  box-shadow: 2px 4px 10px #00000040;
-}
-
-@media screen and (min-width: 550px) {
-  .itemDetailContainer {
-    overflow: none;
-  }
+  max-width: 110rem;
+  margin: 3rem auto;
 }

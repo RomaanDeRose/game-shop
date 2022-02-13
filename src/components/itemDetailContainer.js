@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { getItems } from "../api/api";
 import ItemDetail from "./itemDetail";
 import "./itemDetailContainer.css";
+import { getItems } from "../api/api";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
   const [prodDetail, setProdDetail] = useState([]);

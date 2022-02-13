@@ -64,7 +64,7 @@ const products = [
       "Es un juego de tipo batalla real en el que compiten hasta cien jugadores en solitario o en escuadrones de dos o cuatro miembros. Los jugadores saltan de un autobús que cruza el mapa en el momento que deseen, y empiezan sin armas.",
     imageURL:
       "https://cdn2.unrealengine.com/14br-consoles-1920x1080-wlogo-1920x1080-432974386.jpg",
-    title: "Fortnite",
+    title: "FORTNITE",
     price: "6.000",
     category: "action",
   },

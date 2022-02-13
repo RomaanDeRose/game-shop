@@ -24,21 +24,18 @@ const ItemCount = ({ stock }) => {
 
   return (
     <div className="itemCount-container">
-      <h3 className="itemCount__title">FIFA 22</h3>
       <div className="itemCount-prodCant">
-        <FontAwesomeIcon
-          icon={faMinus}
-          className="itemCount__icon"
-          onClick={removeProd}
-        />
+        <button className="button-cant" onClick={removeProd}>
+          <FontAwesomeIcon icon={faMinus} className="itemCount__icon" />
+        </button>
         <span>{sumProd}</span>
-        <FontAwesomeIcon
-          icon={faPlus}
-          className="itemCount__icon"
-          onClick={addProd}
-        />
+        <button className="button-cant" onClick={addProd}>
+          <FontAwesomeIcon icon={faPlus} className="itemCount__icon" />
+        </button>
       </div>
-      <button onClick={onAdd}>Agregar al carrito</button>
+      <button className="button-buy" onClick={onAdd}>
+        Agregar al carrito
+      </button>
     </div>
   );
 };
