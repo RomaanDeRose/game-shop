@@ -23,7 +23,7 @@ const ItemDetailContainer = () => {
       <Link to="/">
         <button>
           <FontAwesomeIcon className="icon-home" icon={faHome} /> Volver al
-          Inicio {prodDetail.length}
+          Inicio
         </button>
       </Link>
       {prodDetail.length === 0 ? (
