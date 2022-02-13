@@ -1,6 +1,8 @@
-#Tienda online
+## Tienda Online
 
-##Game Shop
+## Game Shop
+
+### Autor: Roman De Rose
 
 - Ecommerce de videojuegos. Se encuentran los videojuegos de deportes y de acción!
 - Autor: Roman De Rose
