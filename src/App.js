@@ -15,7 +15,7 @@ function App() {
           path="/category/:categoryGame"
           element={<ItemListContainer greeting="juegos!" />}
         />
-        <Route path="/product/:prodId" element={<ItemDetailContainer />} />
+        <Route path="/item/:prodId" element={<ItemDetailContainer />} />
       </Routes>
       {/* <Footer /> */}
     </div>
