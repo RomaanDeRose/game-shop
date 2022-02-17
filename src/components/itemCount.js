@@ -3,8 +3,8 @@ import "./itemCount.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 
-const ItemCount = ({ stock }) => {
-  const [sumProd, setSumProd] = useState(0);
+const ItemCount = ({ stock, initial, onAdd }) => {
+  const [sumProd, setSumProd] = useState(initial);
 
   const addProd = () => {
     if (sumProd < stock) {
@@ -18,8 +18,8 @@ const ItemCount = ({ stock }) => {
     }
   };
 
-  const onAdd = () => {
-    console.log("Producto agregado!");
+  const addToCart = () => {
+    onAdd(sumProd);
   };
 
   return (
@@ -33,7 +33,7 @@ const ItemCount = ({ stock }) => {
           <FontAwesomeIcon icon={faPlus} className="itemCount__icon" />
         </button>
       </div>
-      <button className="button-buy" onClick={onAdd}>
+      <button className="button-buy" onClick={addToCart}>
         Agregar al carrito
       </button>
     </div>
