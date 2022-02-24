@@ -1,13 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { CartContext } from "../context/cartContext";
 import "./itemDetail.css";
 import ItemCount from "./itemCount";
 
 const ItemDetail = ({ item }) => {
-  const [SumProdCount, setSumProdCount] = useState(undefined);
+  const [showButton, setShowButton] = useState(false);
+  const { addToCart } = useContext(CartContext);
 
-  const onAddItem = (newSumProd) => {
-    setSumProdCount(newSumProd);
+  const onAddItem = (cantidad) => {
+    addToCart(cantidad, item);
+    setShowButton(true);
   };
 
   return (
@@ -17,10 +22,13 @@ const ItemDetail = ({ item }) => {
         <h2 className="itemDetail-text--title">{item.title}</h2>
         <p className="itemDetail-text--description">{item.description}</p>
         <span className="itemDetail-text--buy">${item.price}</span>
-        {!SumProdCount ? (
+        {!showButton ? (
           <ItemCount stock={8} initial={1} onAdd={onAddItem} />
         ) : (
-          <Link to="/cart">Ir al carrito</Link>
+          <Link to="/cart">
+            <FontAwesomeIcon className="icon" icon={faShoppingCart} />
+            Ir al carrito
+          </Link>
         )}
       </div>
     </div>

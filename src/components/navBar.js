@@ -29,7 +29,9 @@ const NavBar = () => {
             <NavLink to="/category/action">Acción</NavLink>
           </li>
         </ul>
-        <CartWidget />
+        <Link to="/cart">
+          <CartWidget />
+        </Link>
         <FontAwesomeIcon
           icon={faBars}
           className="navBar-menu"

@@ -1,0 +1,42 @@
+.cartItem {
+  width: 75%;
+  margin: 2rem auto;
+  padding: 1.2rem;
+  border-radius: 20px;
+  background-color: #ff6b00;
+  color: #081722;
+  text-align: center;
+  position: relative;
+}
+
+.cartItem h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.cartItem p {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.icon-remove {
+  display: inline-block;
+  cursor: pointer;
+  color: #ff6b00;
+  font-size: 2rem;
+  position: absolute;
+  top: calc(50% - 10px);
+  right: -15%;
+  transition: all 200ms ease;
+}
+
+.icon-remove:hover {
+  transform: scale(1.2);
+}
+
+@media screen and (min-width: 750px) {
+  .icon-remove {
+    right: -11%;
+  }
+}

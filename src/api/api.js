@@ -6,7 +6,7 @@ const products = [
     imageURL:
       "https://as01.epimg.net/meristation/imagenes/2021/10/01/guias/1633081476_163721_1633081863_noticia_normal.jpg",
     title: "FIFA 22",
-    price: "6.000",
+    price: 6000,
     category: "sports",
   },
   {
@@ -16,7 +16,7 @@ const products = [
     imageURL:
       "https://cdn1.epicgames.com/offer/9773aa1aa54f4f7b80e44bef04986cea/6609d2e1-62d9-4094-9cb7-26d9a7f5ba3f_2560x1440-071db7b0d39d5635f684940c1e3c4ec3",
     title: "Rocket League",
-    price: "3.500",
+    price: 3500,
     category: "sports",
   },
   {
@@ -26,7 +26,7 @@ const products = [
     imageURL:
       "https://image.api.playstation.com/vulcan/ap/rnd/202106/3002/Eaq9uyUlyLZK8L5xTlsPl0rM.png",
     title: "NBA 2K22",
-    price: "6.000",
+    price: 6000,
     category: "sports",
   },
   {
@@ -35,7 +35,7 @@ const products = [
       "Juega contra los profesionales. Juega con tu equipo. En PGA TOUR 2K21, puedes seguir las reglas o crear las tuyas. NUEVO MODO CARRERA, demuestra que puedes ganar la FedExCup. Vence a los profesionales del PGA TOUR a lo largo de tu carrera y gana recompensas y equipo. PROFESIONALES Y CAMPOS NUEVOS, juega contra Justin Thomas y 11 profesionales en campos de la vida real, como el TPC Sawgrass o East Lake Golf Club.",
     imageURL: "https://cdn.mos.cms.futurecdn.net/kABT6auTqYyc8gyzeGVsZ4.jpg",
     title: "PGA TOUR 2K21",
-    price: "6.000",
+    price: 6000,
     category: "sports",
   },
   {
@@ -45,7 +45,7 @@ const products = [
     imageURL:
       "https://areajugones.sport.es/wp-content/uploads/2021/08/call-of-duty-vanguard-portada-1.jpg",
     title: "Call Of Duty VANGUARD",
-    price: "6.000",
+    price: 6000,
     category: "action",
   },
   {
@@ -55,7 +55,7 @@ const products = [
     imageURL:
       "https://www.muycomputer.com/wp-content/uploads/2020/03/Valorant.jpg",
     title: "VALORANT",
-    price: "6.000",
+    price: 6000,
     category: "action",
   },
   {
@@ -65,7 +65,7 @@ const products = [
     imageURL:
       "https://cdn2.unrealengine.com/14br-consoles-1920x1080-wlogo-1920x1080-432974386.jpg",
     title: "FORTNITE",
-    price: "6.000",
+    price: 6000,
     category: "action",
   },
   {
@@ -75,7 +75,7 @@ const products = [
     imageURL:
       "https://cdn.akamai.steamstatic.com/steam/apps/1475850/capsule_616x353.jpg?t=1643280706",
     title: "RUGBY 22",
-    price: "6.000",
+    price: 6000,
     category: "sports",
   },
   {
@@ -85,7 +85,7 @@ const products = [
     imageURL:
       "https://s3.gaming-cdn.com/images/products/7541/orig/juego-steam-f1-2021-cover.jpg",
     title: "F1 2021",
-    price: "6.000",
+    price: 6000,
     category: "sports",
   },
   {
@@ -95,7 +95,7 @@ const products = [
     imageURL:
       "https://image.api.playstation.com/vulcan/ap/rnd/202202/0721/LDGqEr54kpTZqMKJbspb3QkE.png?w=440&thumb=false",
     title: "APEX LEGENDS",
-    price: "6.000",
+    price: 6000,
     category: "action",
   },
   {
@@ -105,7 +105,7 @@ const products = [
     imageURL:
       "https://image.api.playstation.com/vulcan/img/rnd/202110/2805/KvDDja9QKnvDZhBC2GOtvUlc.png?w=440&thumb=false",
     title: "eFootball 2022",
-    price: "6.000",
+    price: 6000,
     category: "sports",
   },
   {
@@ -115,7 +115,7 @@ const products = [
     imageURL:
       "https://cdn.gamer-network.net/2020/articles/2020-02-18-19-33/-1582054418354.jpg/EG11/thumbnail/1920x1078/format/jpg/quality/80",
     title: "WARFACE",
-    price: "6.000",
+    price: 6000,
     category: "action",
   },
 ];

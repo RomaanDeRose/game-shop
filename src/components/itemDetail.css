@@ -28,6 +28,26 @@
   margin-bottom: -0.3rem;
 }
 
+.itemDetail a {
+  display: block;
+  width: 13rem;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #ff6b00;
+  font-size: 1.3rem;
+  color: #fff;
+  border-radius: 12px;
+  transition: all 200ms ease;
+}
+.itemDetail a:hover {
+  box-shadow: 0px 0px 10px #ff6b00;
+}
+
+.icon {
+  margin-right: 0.6rem;
+  font-size: 1.6rem;
+}
+
 @media screen and (min-width: 650px) {
   .itemDetail {
     display: flex;
