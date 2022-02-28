@@ -10,8 +10,12 @@ const CartItem = ({ item }) => {
   return (
     <div className="cartItem">
       <h2>{item.title}</h2>
-      <p>Cantidad: {item.cantidad}</p>
-      <p>Precio: ${item.cantidad * item.price}</p>
+      <p>
+        Cantidad: <span>{item.cantidad}</span>
+      </p>
+      <p>
+        Precio: <span>${item.cantidad * item.price}</span>
+      </p>
       <FontAwesomeIcon
         icon={faTrash}
         className="icon-remove"

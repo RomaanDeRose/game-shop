@@ -4,7 +4,7 @@ import CartItem from "./cartItem";
 import "./cart.css";
 
 const Cart = () => {
-  const { cart, clearCart } = useContext(CartContext);
+  const { cart, clearCart, showTotal } = useContext(CartContext);
 
   return (
     <div className="cart">
@@ -16,9 +16,15 @@ const Cart = () => {
           cart.map((item) => <CartItem key={item.id} item={item} />)
         )}
       </div>
-      <p className="cart-totalPrice">Total: ....</p>
-      <button>Comprar</button>
-      <button onClick={clearCart}>Borrar carrito</button>
+      {cart.length > 0 && (
+        <>
+          <p className="cart-totalPrice">
+            Total: <span>${showTotal()}</span>
+          </p>
+          <button>Comprar</button>
+          <button onClick={clearCart}>Borrar carrito</button>
+        </>
+      )}
     </div>
   );
 };

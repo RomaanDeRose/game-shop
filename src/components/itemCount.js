@@ -33,7 +33,12 @@ const ItemCount = ({ stock, initial, onAdd }) => {
           <FontAwesomeIcon icon={faPlus} className="itemCount__icon" />
         </button>
       </div>
-      <button className="button-buy" onClick={addToCart}>
+      <button
+        className="button-buy"
+        onClick={() => {
+          addToCart();
+        }}
+      >
         Agregar al carrito
       </button>
     </div>

@@ -7,12 +7,17 @@ const CartContextProvider = ({ children }) => {
 
   const addToCart = (cantidad, item) => {
     if (onCart(item.id)) {
-      alert("producto existente en carrito");
+      const updateCart = [...cart];
+      updateCart.forEach((itemCart) => {
+        if (itemCart.id === item.id) {
+          itemCart.cantidad += cantidad;
+        }
+      });
+      setCart(updateCart);
     } else {
       setCart([...cart, { ...item, cantidad }]);
     }
   };
-  // console.log(cart);
 
   const onCart = (id) => cart.some((item) => item.id === id);
 
@@ -25,8 +30,26 @@ const CartContextProvider = ({ children }) => {
     setCart([]);
   };
 
+  const showItems = () => {
+    let itemCartCantidad = 0;
+    cart.forEach((itemCart) => {
+      itemCartCantidad += itemCart.cantidad;
+    });
+    return itemCartCantidad;
+  };
+
+  const showTotal = () => {
+    const totalPrice = cart.reduce(
+      (acc, item) => (acc += item.cantidad * item.price),
+      0
+    );
+    return totalPrice;
+  };
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, clearItem, clearCart }}>
+    <CartContext.Provider
+      value={{ cart, addToCart, clearItem, clearCart, showItems, showTotal }}
+    >
       {children}
     </CartContext.Provider>
   );
