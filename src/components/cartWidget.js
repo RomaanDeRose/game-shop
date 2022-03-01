@@ -10,7 +10,10 @@ const CartWidget = () => {
   return (
     <div className="container-cart">
       <FontAwesomeIcon icon={faShoppingCart} className="cartLogo" />
-      <span className="cartCount">{showItems()}</span>
+      {/* <span className="cartCount">{showItems()}</span> */}
+      {showItems() > 0 ? (
+        <span className="cartCount">{showItems()}</span>
+      ) : null}
     </div>
   );
 };

@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import ItemList from "./itemList";
 import { getItems } from "../api/api";
 import { useParams } from "react-router-dom";
+import { getDocs, collection } from "firebase/firestore";
+import { DB } from "../firebase";
 
 const ItemListContainer = ({ greeting }) => {
   const [products, setProducts] = useState([]);
@@ -20,6 +22,21 @@ const ItemListContainer = ({ greeting }) => {
       }
     });
   }, [categoryGame]);
+
+  useEffect(() => {
+    const itemColecction = collection(DB, "items");
+    getDocs(itemColecction)
+      .then((snapshot) => {
+        const items = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setProducts(items);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   return (
     <div className="itemListContainer">
