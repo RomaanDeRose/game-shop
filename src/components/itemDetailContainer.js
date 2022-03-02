@@ -34,7 +34,7 @@ const ItemDetailContainer = () => {
         </button>
       </Link>
       {prodDetail.length === 0 ? (
-        <p className="text-loading">Cargando...</p>
+        <div className="text-loading"></div>
       ) : (
         <ItemDetail item={prodDetail} />
       )}

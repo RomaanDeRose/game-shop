@@ -1,42 +1,56 @@
 import "./itemListContainer.css";
 import { useState, useEffect } from "react";
 import ItemList from "./itemList";
-import { getItems } from "../api/api";
+import { getItemsByCategory } from "../api/api";
 import { useParams } from "react-router-dom";
-import { getDocs, collection } from "firebase/firestore";
-import { DB } from "../firebase";
+// import { getDocs, collection } from "firebase/firestore";
+// import { DB } from "../firebase";
 
 const ItemListContainer = ({ greeting }) => {
   const [products, setProducts] = useState([]);
   const { categoryGame } = useParams();
 
   useEffect(() => {
-    getItems().then((res) => {
-      if (!categoryGame) {
-        setProducts(res);
-      } else {
-        const filterCategory = res.filter(
-          (item) => item.category === categoryGame
-        );
-        setProducts(filterCategory);
-      }
-    });
-  }, [categoryGame]);
-
-  useEffect(() => {
-    const itemColecction = collection(DB, "items");
-    getDocs(itemColecction)
+    getItemsByCategory(categoryGame)
       .then((snapshot) => {
-        const items = snapshot.docs.map((doc) => ({
+        const products = snapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
         }));
-        setProducts(items);
+        setProducts(products);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [categoryGame]);
+
+  // useEffect(() => {
+  //   getItems().then((res) => {
+  //     if (!categoryGame) {
+  //       setProducts(res);
+  //     } else {
+  //       const filterCategory = res.filter(
+  //         (item) => item.category === categoryGame
+  //       );
+  //       setProducts(filterCategory);
+  //     }
+  //   });
+  // }, [categoryGame]);
+
+  // useEffect(() => {
+  //   const itemCollection = collection(DB, "items");
+  //   getDocs(itemCollection)
+  //     .then((snapshot) => {
+  //       const items = snapshot.docs.map((doc) => ({
+  //         id: doc.id,
+  //         ...doc.data(),
+  //       }));
+  //       setProducts(items);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, []);
 
   return (
     <div className="itemListContainer">
@@ -44,7 +58,7 @@ const ItemListContainer = ({ greeting }) => {
       {products.length > 0 ? (
         <ItemList products={products} />
       ) : (
-        <p className="text-loading">Cargando...</p>
+        <div className="text-loading"></div>
       )}
     </div>
   );

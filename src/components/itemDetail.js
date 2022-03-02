@@ -25,7 +25,7 @@ const ItemDetail = ({ item }) => {
         {!showButton ? (
           <ItemCount stock={8} initial={1} onAdd={onAddItem} />
         ) : (
-          <Link to="/cart">
+          <Link to="/cart" className="link-cart">
             <FontAwesomeIcon className="icon" icon={faShoppingCart} />
             Ir al carrito
           </Link>

@@ -15,9 +15,27 @@
 }
 
 .text-loading {
-  text-transform: uppercase;
-  font-weight: 900;
-  font-size: 2.2rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 5px solid #ff6b00;
+  border-top: none;
+  border-right: none;
+  transition: all 200ms ease;
+  animation: loading 500ms ease infinite;
+}
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media screen and (min-width: 1300px) {
