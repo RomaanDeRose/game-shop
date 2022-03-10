@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { CartContext } from "../context/cartContext";
+import { Toaster } from "react-hot-toast";
 import { collection, addDoc } from "firebase/firestore";
 import { DB } from "../firebase";
 import CartItem from "./cartItem";
@@ -97,6 +98,7 @@ const Cart = () => {
           </Link>
         </>
       )}
+      <Toaster />
     </div>
   );
 };

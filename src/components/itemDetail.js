@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 import { CartContext } from "../context/cartContext";
 import "./itemDetail.css";
 import ItemCount from "./itemCount";
@@ -31,6 +32,7 @@ const ItemDetail = ({ item }) => {
           </Link>
         )}
       </div>
+      <Toaster />
     </div>
   );
 };

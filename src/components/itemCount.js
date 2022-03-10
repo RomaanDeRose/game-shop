@@ -2,9 +2,23 @@ import React, { useState } from "react";
 import "./itemCount.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
+import toast from "react-hot-toast";
 
 const ItemCount = ({ stock, initial, onAdd }) => {
   const [sumProd, setSumProd] = useState(initial);
+
+  const toastAddProduct = () =>
+    toast.success("Producto agregado!", {
+      duration: 1000,
+      style: {
+        backgroundColor: "#ff6a00",
+        color: "#081722",
+        padding: "1.1rem",
+        fontWeight: "500",
+        borderRadius: "16px",
+        fontSize: "1.5rem",
+      },
+    });
 
   const addProd = () => {
     if (sumProd < stock) {
@@ -37,6 +51,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         className="button-buy"
         onClick={() => {
           addToCart();
+          toastAddProduct();
         }}
       >
         Agregar al carrito

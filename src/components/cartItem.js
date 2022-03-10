@@ -2,10 +2,24 @@ import { useContext } from "react";
 import { CartContext } from "../context/cartContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import toast from "react-hot-toast";
 import "./cartItem.css";
 
 const CartItem = ({ item }) => {
   const { clearItem } = useContext(CartContext);
+
+  const toastRemoveProduct = () =>
+    toast.error("Producto eliminado!", {
+      duration: 1000,
+      style: {
+        backgroundColor: "#ff6a00",
+        color: "#081722",
+        padding: "1.1rem",
+        fontWeight: "500",
+        borderRadius: "16px",
+        fontSize: "1.5rem",
+      },
+    });
 
   return (
     <div className="cartItem">
@@ -21,6 +35,7 @@ const CartItem = ({ item }) => {
         className="icon-remove"
         onClick={() => {
           clearItem(item.id);
+          toastRemoveProduct();
         }}
       />
     </div>
