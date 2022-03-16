@@ -1,13 +1,14 @@
 import React, { useState, useContext } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { CartContext } from "../context/cartContext";
-import "./itemDetail.css";
 import ItemCount from "./itemCount";
+import "./itemDetail.css";
 
 const ItemDetail = ({ item }) => {
+  const { imageURL, title, description, price } = item;
   const [showButton, setShowButton] = useState(false);
   const { addToCart } = useContext(CartContext);
 
@@ -18,11 +19,11 @@ const ItemDetail = ({ item }) => {
 
   return (
     <div className="itemDetail">
-      <img src={item.imageURL} alt="juego" className="itemDetail-img" />
+      <img src={imageURL} alt="juego" className="itemDetail-img" />
       <div className="itemDetail-text">
-        <h2 className="itemDetail-text--title">{item.title}</h2>
-        <p className="itemDetail-text--description">{item.description}</p>
-        <span className="itemDetail-text--buy">${item.price}</span>
+        <h2 className="itemDetail-text--title">{title}</h2>
+        <p className="itemDetail-text--description">{description}</p>
+        <span className="itemDetail-text--buy">${price}</span>
         {!showButton ? (
           <ItemCount stock={8} initial={1} onAdd={onAddItem} />
         ) : (

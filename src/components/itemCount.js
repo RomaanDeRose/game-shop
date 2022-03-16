@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./itemCount.css";
+import toast from "react-hot-toast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
-import toast from "react-hot-toast";
+import "./itemCount.css";
 
 const ItemCount = ({ stock, initial, onAdd }) => {
   const [sumProd, setSumProd] = useState(initial);
@@ -27,7 +27,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
   };
 
   const removeProd = () => {
-    if (sumProd > 0) {
+    if (sumProd > 1) {
       setSumProd(sumProd - 1);
     }
   };

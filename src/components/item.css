@@ -1,15 +1,15 @@
 .item-card {
   width: 26rem;
   height: 30rem;
-  border-radius: 14px;
-  border: 2.2px solid #ff6b00;
+  border-radius: 16px;
+  border: 3.5px solid #ff6b00;
   margin: 3.5rem;
-  box-shadow: 2px 4px 12px #00000034;
+  box-shadow: 2px 4px 10px #00000034;
   overflow: hidden;
   transition: all 200ms ease;
 }
 .item-card:hover {
-  transform: scale(1.02);
+  transform: scale(1.06);
 }
 
 .item-card a {

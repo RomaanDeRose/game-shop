@@ -1,12 +1,11 @@
-import "./itemDetailContainer.css";
-import ItemDetail from "./itemDetail";
+import { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
 import { DB } from "../firebase";
+import ItemDetail from "./itemDetail";
+import "./itemDetailContainer.css";
 
 const ItemDetailContainer = () => {
   const [prodDetail, setProdDetail] = useState([]);

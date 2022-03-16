@@ -1,10 +1,10 @@
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { toast, Toaster } from "react-hot-toast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
-import { CartContext } from "../context/cartContext";
-import { Toaster } from "react-hot-toast";
 import { collection, addDoc } from "firebase/firestore";
+import { CartContext } from "../context/cartContext";
 import { DB } from "../firebase";
 import CartItem from "./cartItem";
 import "./cart.css";
@@ -14,6 +14,8 @@ const Cart = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
+  const [emailConfirm, setEmailConfirm] = useState("");
+  const [loading, setLoading] = useState(false);
   const [orderID, setOrderID] = useState(false);
 
   const handleNameChange = (e) => setName(e.target.value);
@@ -22,10 +24,25 @@ const Cart = () => {
 
   const handleEmailChange = (e) => setEmail(e.target.value);
 
+  const handleConfirmEmailChange = (e) => setEmailConfirm(e.target.value);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const totalPrice = showTotal();
-    if (![name, phone, email].some((text) => text.trim() === "")) {
+    if (email !== emailConfirm) {
+      return toast.error("Los emails no coinciden", {
+        duration: 1500,
+        style: {
+          backgroundColor: "#ff6a00",
+          color: "#081722",
+          padding: "1.1rem",
+          fontWeight: "600",
+          borderRadius: "16px",
+          fontSize: "1.6rem",
+        },
+      });
+    } else if (![name, phone, email].some((text) => text.trim() === "")) {
+      setLoading(true);
+      const totalPrice = showTotal();
       const itemCollection = collection(DB, "orders");
       const newItem = {
         buyer: { name, phone, email },
@@ -36,27 +53,52 @@ const Cart = () => {
       addDoc(itemCollection, newItem)
         .then((item) => setOrderID(item.id))
         .catch((err) => console.log(err));
+      clearCart();
     }
-    clearCart();
   };
 
   return (
     <div className="cart">
       <h2 className="cart-title">Carrito</h2>
       <div className="cart-container">
-        {cart.length === 0 && orderID === false ? (
-          <p className="noProducts">No hay productos en el carrito...</p>
+        {cart.length === 0 && orderID === false && loading === false ? (
+          <>
+            <p className="noProducts">No hay productos en el carrito...</p>
+            <Link to="/">
+              <button className="button">
+                <FontAwesomeIcon className="icon-home" icon={faHome} /> Volver
+                al Inicio
+              </button>
+            </Link>
+          </>
         ) : (
           cart.map((item) => <CartItem key={item.id} item={item} />)
         )}
       </div>
-      {cart.length > 0 && orderID === false && (
+      {cart.length > 0 && orderID === false && loading === false && (
         <div className="cart-order">
           <p className="cart-totalPrice">
             Total: <span>${showTotal()}</span>
           </p>
-          {/* <button>Comprar</button> */}
-          <button onClick={clearCart}>Borrar carrito</button>
+          <button
+            className="button"
+            onClick={() => {
+              toast("Productos eliminados!", {
+                duration: 1000,
+                style: {
+                  backgroundColor: "#ff6a00",
+                  color: "#081722",
+                  padding: "1.2rem",
+                  fontWeight: "600",
+                  borderRadius: "18px",
+                  fontSize: "1.7rem",
+                },
+              });
+              clearCart();
+            }}
+          >
+            Borrar carrito
+          </button>
           <form className="form" onSubmit={handleSubmit}>
             <h2>Completa tus datos!</h2>
             <input
@@ -80,18 +122,33 @@ const Cart = () => {
               onChange={handleEmailChange}
               required
             />
-            <input type="submit" value="Comprar" />
+            <input
+              value={emailConfirm}
+              type="email"
+              placeholder="Confirma tu email..."
+              onChange={handleConfirmEmailChange}
+              required
+            />
+            <button type="submit" className="button" value="Comprar">
+              Comprar
+            </button>
           </form>
         </div>
       )}
-      {orderID && (
+      {loading && orderID === false && (
+        <>
+          <div className="text-loading"></div>
+          <p className="loadingBuy">Generando compra...</p>
+        </>
+      )}
+      {loading && orderID !== false && (
         <>
           <p className="order-msg">
             Compra existosa! Puedes seguir el envío con el siguiente ID:{" "}
           </p>
           <span className="order-msg--id">{orderID}</span>
           <Link to="/">
-            <button>
+            <button className="button">
               <FontAwesomeIcon className="icon-home" icon={faHome} /> Volver al
               Inicio
             </button>

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "./navBar.css";
-import CartWidget from "./cartWidget";
+import { Link, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faGamepad } from "@fortawesome/free-solid-svg-icons";
-import { Link, NavLink } from "react-router-dom";
+import CartWidget from "./cartWidget";
+import "./navBar.css";
 
 const NavBar = () => {
   const [navMenu, setNavMenu] = useState(false);

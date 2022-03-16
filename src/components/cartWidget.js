@@ -1,8 +1,8 @@
-import "./cartWidget.css";
+import { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import { useContext } from "react";
 import { CartContext } from "../context/cartContext";
+import "./cartWidget.css";
 
 const CartWidget = () => {
   const { showItems } = useContext(CartContext);
