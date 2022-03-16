@@ -13,4 +13,4 @@
 - React Router Dom
 - React Hot Toast (para una mejor experiencia de usuario)
 
-  ![VideoGif](public/navegacion.mp4)
+  ![VideoGif](public/navegacion.gif)
