@@ -7,7 +7,7 @@
 - Ecommerce de videojuegos. Se encuentran los videojuegos de deportes y de acción!
 - Autor: Roman De Rose
 
-###Dependencias:
+### Dependencias:
 
 - Firebase
 - React Router Dom
