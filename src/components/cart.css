@@ -116,6 +116,10 @@ input {
   border-radius: 25px;
 }
 
+input::placeholder {
+  color: rgba(255, 107, 0, 0.45);
+}
+
 input:focus {
   outline: none;
 }
